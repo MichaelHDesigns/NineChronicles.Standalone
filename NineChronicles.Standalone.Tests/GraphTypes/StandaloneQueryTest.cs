@@ -323,7 +323,7 @@ namespace NineChronicles.Standalone.Tests.GraphTypes
                             ),
                             adminAddressState: new AdminState(adminAddress, 1500000),
                             activatedAccountsState: new ActivatedAccountsState(activatedAccounts),
-                            goldCurrencyState: new GoldCurrencyState(new Currency("NCG", 2, minter: null)),
+                            goldCurrencyState: new GoldCurrencyState(new Currency("SCN", 2, minter: null)),
                             goldDistributions: new GoldDistribution[0],
                             tableSheets: new Dictionary<string, string>(),
                             pendingActivationStates: new PendingActivationState[]{ }
@@ -389,7 +389,7 @@ namespace NineChronicles.Standalone.Tests.GraphTypes
         [Fact]
         public async Task GoldBalance()
         {
-            var goldCurrency = new Currency("NCG", 2, minter: null);
+            var goldCurrency = new Currency("SCN", 2, minter: null);
             Block<PolymorphicAction<ActionBase>> genesis =
                 BlockChain<PolymorphicAction<ActionBase>>.MakeGenesisBlock(
                     new PolymorphicAction<ActionBase>[]
@@ -461,7 +461,7 @@ namespace NineChronicles.Standalone.Tests.GraphTypes
         [Fact]
         public async Task NextTxNonce()
         {
-            var goldCurrency = new Currency("NCG", 2, minter: null);
+            var goldCurrency = new Currency("SCN", 2, minter: null);
             Block<PolymorphicAction<ActionBase>> genesis =
                 BlockChain<PolymorphicAction<ActionBase>>.MakeGenesisBlock(
                     new PolymorphicAction<ActionBase>[]
