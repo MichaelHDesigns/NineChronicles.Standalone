@@ -105,7 +105,7 @@ namespace NineChronicles.Standalone.Tests.GraphTypes
             var activateAccounts = new[] { adminAddress }.ToImmutableHashSet();
 
             Block<PolymorphicAction<ActionBase>> genesis =
-                MakeGenesisBlock(adminAddress, new Currency("NCG", 2, minters: null), activateAccounts);
+                MakeGenesisBlock(adminAddress, new Currency("SCN", 2, minters: null), activateAccounts);
             NineChroniclesNodeService service = CreateNineChroniclesNodeService(genesis);
             StandaloneContextFx.NineChroniclesNodeService = service;
             StandaloneContextFx.BlockChain = service.Swarm.BlockChain;
@@ -140,7 +140,7 @@ namespace NineChronicles.Standalone.Tests.GraphTypes
         [Fact]
         public async Task TransferGold()
         {
-            var goldCurrency = new Currency("NCG", 2, minter: null);
+            var goldCurrency = new Currency("SCN", 2, minter: null);
             Block<PolymorphicAction<ActionBase>> genesis =
                 MakeGenesisBlock(
                     default,
@@ -333,7 +333,7 @@ namespace NineChronicles.Standalone.Tests.GraphTypes
             Block<PolymorphicAction<ActionBase>> genesis =
                 MakeGenesisBlock(
                     default,
-                    new Currency("NCG", 2, minters: null),
+                    new Currency("SCN", 2, minters: null),
                     ImmutableHashSet<Address>.Empty
                 );
             NineChroniclesNodeService service = CreateNineChroniclesNodeService(genesis);
@@ -429,7 +429,7 @@ namespace NineChronicles.Standalone.Tests.GraphTypes
 
         private BlockChain<PolymorphicAction<ActionBase>> GetContextFx(PrivateKey playerPrivateKey, RankingState ranking)
         {
-            var goldCurrency = new Currency("NCG", 2, minter: null);
+            var goldCurrency = new Currency("SCN", 2, minter: null);
             Block<PolymorphicAction<ActionBase>> genesis =
                 BlockChain<PolymorphicAction<ActionBase>>.MakeGenesisBlock(
                     new PolymorphicAction<ActionBase>[]
